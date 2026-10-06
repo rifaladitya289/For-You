@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Cippaa 💌</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    color:white;
+    background:linear-gradient(
+        160deg,
+        #ff9dcc,
+        #6d245c,
+        #21091d
+    );
+    overflow:hidden;
+}
+
+#app{
+    width:100%;
+    height:100vh;
+    position:relative;
+}
+
+.page{
+    width:100%;
+    height:100%;
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.box{
+    width:100%;
+    max-width:360px;
+    padding:25px 22px 30px;
+    background:#241022;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:28px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+
+/* ================= GIF ================= */
+
+.nailong-gif{
+    width:170px;
+    height:170px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 5px;
+    border-radius:20px;
+    animation:naikTurun 2s infinite ease-in-out;
+}
+
+.gif-yey{
+    width:190px;
+    height:190px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 5px;
+    border-radius:20px;
+    animation:yeyGif 1.2s infinite ease-in-out;
+}
+
+@keyframes naikTurun{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes yeyGif{
+    0%,100%{
+        transform:scale(1) rotate(0);
+    }
+
+    25%{
+        transform:scale(1.08) rotate(-3deg);
+    }
+
+    50%{
+        transform:scale(1.13) rotate(3deg);
+    }
+
+    75%{
+        transform:scale(1.08) rotate(-2deg);
+    }
+}
+
+.ganti-gif{
+    animation:gantiGif .35s ease;
+}
+
+@keyframes gantiGif{
+    0%{
+        opacity:0;
+        transform:scale(.7);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* ================= TEXT ================= */
+
+h1{
+    font-size:28px;
+    margin:10px 0 15px;
+}
+
+p{
+    color:#f4dce9;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.question{
+    font-size:23px;
+    font-weight:bold;
+    line-height:1.4;
+    margin:10px 0;
+}
+
+.pesan-nggak{
+    min-height:24px;
+    margin:5px 0 10px;
+    color:#ff9dcc;
+    font-size:14px;
+    font-weight:bold;
+    transition:opacity .2s;
+}
+
+
+/* ================= BUTTON ================= */
+
+.btn{
+    border:none;
+    padding:14px 25px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.buka{
+    margin-top:25px;
+    background:#ff4f9a;
+    color:white;
+    box-shadow:0 8px 25px rgba(255,79,154,.4);
+}
+
+.buttons{
+    width:100%;
+    height:140px;
+    position:relative;
+}
+
+.ya{
+    background:#ff4f9a;
+    color:white;
+}
+
+.tidak{
+    position:absolute;
+    left:52%;
+    top:65px;
+    background:white;
+    color:#333;
+    transition:left .15s,top .15s;
+}
+
+
+/* ================= GIFT ================= */
+
+.gift{
+    font-size:90px;
+    margin:25px 0;
+    cursor:pointer;
+    animation:goyang 1.5s infinite;
+}
+
+@keyframes goyang{
+    0%,100%{
+        transform:rotate(0);
+    }
+
+    25%{
+        transform:rotate(-7deg);
+    }
+
+    75%{
+        transform:rotate(7deg);
+    }
+}
+
+
+/* ================= HASIL ================= */
+
+.hasil{
+    display:none;
+}
+
+.hati{
+    font-size:55px;
+    animation:besarKecil .6s infinite;
+}
+
+@keyframes besarKecil{
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+.hore{
+    font-size:18px;
+    font-weight:bold;
+    color:#ff9dcc;
+    animation:horeAnim 1s ease-out;
+}
+
+@keyframes horeAnim{
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    60%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+
+/* ==================================================
+   PERAYAAN
+================================================== */
+
+#perayaan{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1000;
+    overflow:hidden;
+}
+
+.burst{
+    position:absolute;
+    left:50%;
+    top:50%;
+    font-size:24px;
+    animation:burstKeluar 1.4s cubic-bezier(.1,.8,.2,1) forwards;
+}
+
+@keyframes burstKeluar{
+    0%{
+        transform:
+            translate(-50%,-50%)
+            scale(.2)
+            rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.4)
+            rotate(var(--r));
+        opacity:0;
+    }
+}
+
+.confetti{
+    position:fixed;
+    top:-40px;
+    font-size:24px;
+    z-index:1001;
+    pointer-events:none;
+    animation:jatuh 4s linear forwards;
+}
+
+@keyframes jatuh{
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.8);
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(115vh)
+            rotate(900deg)
+            scale(1.2);
+        opacity:0;
+    }
+}
+
+.flash{
+    position:fixed;
+    inset:0;
+    background:white;
+    opacity:0;
+    pointer-events:none;
+    z-index:999;
+    animation:flash .45s ease-out;
+}
+
+@keyframes flash{
+    0%{
+        opacity:.7;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+
+/* ==================================================
+   HALAMAN AMPLOP
+================================================== */
+
+.halaman-amplop .box{
+    padding-top:30px;
+    padding-bottom:35px;
+}
+
+.amplop-area{
+    width:260px;
+    height:190px;
+    margin:30px auto 25px;
+    position:relative;
+    cursor:pointer;
+    perspective:800px;
+}
+
+.amplop{
+    width:240px;
+    height:145px;
+    position:absolute;
+    left:10px;
+    top:35px;
+    background:#ff6fae;
+    border-radius:8px;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+    overflow:visible;
+}
+
+
+/* bagian depan amplop */
+
+.amplop:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 49%,
+            #e84f91 50%
+        );
+    clip-path:polygon(
+        0 0,
+        50% 58%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+    border-radius:8px;
+}
+
+
+/* lipatan kiri kanan */
+
+.amplop:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            35deg,
+            transparent 49%,
+            #f45b9d 50%
+        );
+    clip-path:polygon(
+        0 0,
+        50% 58%,
+        0 100%
+    );
+    border-radius:8px;
+}
+
+
+/* tutup amplop */
+
+.tutup{
+    position:absolute;
+    width:240px;
+    height:120px;
+    left:0;
+    top:0;
+    background:#ff8abb;
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 62%
+    );
+    transform-origin:top center;
+    z-index:5;
+    transition:
+        transform .9s cubic-bezier(.2,.8,.2,1);
+    filter:brightness(1.03);
+}
+
+
+/* surat */
+
+.surat{
+    width:205px;
+    height:125px;
+    background:white;
+    color:#ff4f9a;
+    position:absolute;
+    left:18px;
+    top:15px;
+    z-index:2;
+    border-radius:7px;
+    padding:15px 10px;
+    font-weight:bold;
+    font-size:16px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:
+        top 1s cubic-bezier(.2,.8,.2,1),
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* setelah dibuka */
+
+.amplop-area.dibuka .tutup{
+    transform:rotateX(180deg);
+}
+
+.amplop-area.dibuka .surat{
+    top:-70px;
+    transform:scale(1.03);
+}
+
+
+/* hati kecil */
+
+.hati-amplop{
+    position:absolute;
+    left:50%;
+    top:45%;
+    transform:translate(-50%,-50%);
+    z-index:10;
+    font-size:35px;
+    transition:opacity .3s;
+}
+
+.amplop-area.dibuka .hati-amplop{
+    opacity:0;
+}
+
+
+/* tulisan tap */
+
+.tap-amplop{
+    color:#ffc0dd;
+    font-size:14px;
+    margin-top:15px;
+    animation:berkedip 1.5s infinite;
+}
+
+@keyframes berkedip{
+    0%,100%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+
+/* isi surat */
+
+.isi-cinta{
+    display:none;
+    animation:munculCinta 1s ease forwards;
+}
+
+@keyframes munculCinta{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.i-love-you{
+    font-size:34px;
+    font-weight:900;
+    color:#ff76ae;
+    text-shadow:
+        0 0 15px rgba(255,118,174,.5);
+    margin:20px 0 8px;
+    animation:cintaMuncul 1s ease;
+}
+
+@keyframes cintaMuncul{
+    0%{
+        transform:scale(.2);
+        opacity:0;
+    }
+
+    70%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.tulisan-cinta{
+    font-size:15px;
+    color:#f7dce9;
+    margin-bottom:22px;
+}
+
+.btn-cinta{
+    background:linear-gradient(
+        135deg,
+        #ff4f9a,
+        #ff78b5
+    );
+    color:white;
+    box-shadow:
+        0 8px 25px rgba(255,79,154,.45);
+    animation:pulseCinta 1.5s infinite;
+}
+
+@keyframes pulseCinta{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:
+            0 8px 25px rgba(255,79,154,.4);
+    }
+
+    50%{
+        transform:scale(1.06);
+        box-shadow:
+            0 10px 35px rgba(255,79,154,.65);
+    }
+}
+
+
+/* ==================================================
+   BALASAN CINTA
+================================================== */
+
+.balasan{
+    display:none;
+    animation:balasanMuncul 1s ease;
+}
+
+@keyframes balasanMuncul{
+    from{
+        opacity:0;
+        transform:scale(.6);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.balasan h1{
+    color:#ff76ae;
+    font-size:30px;
+}
+
+.balasan p{
+    font-size:15px;
+}
+
+.hati-besar{
+    font-size:75px;
+    animation:hatiLoncat 1s infinite;
+}
+
+@keyframes hatiLoncat{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+
+    50%{
+        transform:translateY(-10px) scale(1.12);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div id="app">
+
+
+<!-- ==================================================
+     HALAMAN 1
+================================================== -->
+
+<div class="page" id="halaman1">
+
+    <div class="box">
+
+        <img
+            class="nailong-gif"
+            src="https://media1.tenor.com/m/sp1Ek2hg-VsAAAAd/nailong.gif"
+            alt="Nailong GIF"
+        >
+
+        <h1>
+            Hai Cippaa 💌
+        </h1>
+
+        <p>
+            Aku punya sesuatu buat kamu...
+            <br>
+            Tapi kamu harus buka dulu 🎁
+        </p>
+
+        <div
+            class="gift"
+            onclick="bukaPesan()"
+        >
+            🎁
+        </div>
+
+        <p>
+            Tap hadiahnya 👆
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     HALAMAN 2
+================================================== -->
+
+<div
+    class="page"
+    id="halaman2"
+    style="display:none;"
+>
+
+    <div class="box">
+
+        <img
+            class="nailong-gif"
+            src="https://media1.tenor.com/m/W9YoZ1h0sVgAAAAd/zh.gif"
+            alt="GIF"
+        >
+
+        <h1>
+            Cippaa...
+        </h1>
+
+        <p>
+            Sebenarnya aku sudah lama
+            ingin mengatakan sesuatu.
+
+            <br><br>
+
+            Aku suka sama kamu. ❤️
+
+            <br><br>
+
+            Dan sekarang aku mau
+            nanya langsung...
+        </p>
+
+        <button
+            class="btn buka"
+            onclick="lanjut()"
+        >
+            Lanjut 💌
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     HALAMAN 3
+================================================== -->
+
+<div
+    class="page"
+    id="halaman3"
+    style="display:none;"
+>
+
+    <div class="box">
+
+        <img
+            id="gifNailong"
+            class="nailong-gif"
+            src="https://media1.tenor.com/m/OFizWA0DymEAAAAd/nailong-yellow-dragon.gif"
+            alt="Nailong"
+        >
+
+        <div class="question">
+            Cippaa...
+            <br><br>
+            Mau jadi pacarku? ❤️
+        </div>
+
+        <div
+            class="pesan-nggak"
+            id="pesanNggak"
+        ></div>
+
+        <div class="buttons">
+
+            <button
+                class="btn ya"
+                onclick="jawabIya()"
+            >
+                Iya ❤️
+            </button>
+
+            <button
+                class="btn tidak"
+                id="tombolTidak"
+            >
+                Enggak 😭
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     HALAMAN 4
+================================================== -->
+
+<div
+    class="page"
+    id="halaman4"
+    style="display:none;"
+>
+
+    <div class="box">
+
+        <img
+            class="gif-yey"
+            src="https://media1.tenor.com/m/aqQM4YJbKJUAAAAd/nailong.gif"
+            alt="Nailong Yey"
+        >
+
+        <div class="hati">
+            ❤️
+        </div>
+
+        <div class="hasil">
+
+            <h1>
+                YEEEY! 🥹❤️
+            </h1>
+
+            <div class="hore">
+                HOREÉÉÉÉ! 🎉🎉🎉
+            </div>
+
+            <p>
+                Akhirnyaa kamu bilang iyaa,
+                Cippaa. 💗
+
+                <br><br>
+
+                Semoga setelah ini kita bisa
+                saling mengenal lebih dekat
+                dan membuat banyak cerita
+                bareng.
+            </p>
+
+            <button
+                class="btn buka"
+                onclick="keAmplop()"
+            >
+                Ada satu lagi... 💌
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     HALAMAN 5 — AMPLOP
+================================================== -->
+
+<div
+    class="page halaman-amplop"
+    id="halaman5"
+    style="display:none;"
+>
+
+    <div class="box">
+
+        <div id="bagianAmplop">
+
+            <h1>
+                Ada surat untuk kamu 💌
+            </h1>
+
+            <p>
+                Coba buka amplopnya...
+            </p>
+
+            <div
+                class="amplop-area"
+                id="amplopArea"
+                onclick="bukaAmplop()"
+            >
+
+                <div class="amplop">
+
+                    <div class="surat">
+                        💌
+                    </div>
+
+                    <div class="tutup"></div>
+
+                    <div class="hati-amplop">
+                        ❤️
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tap-amplop">
+                Tap amplopnya 👆
+            </div>
+
+        </div>
+
+
+        <!-- ISI SETELAH AMPLOP DIBUKA -->
+
+        <div
+            class="isi-cinta"
+            id="isiCinta"
+        >
+
+            <div class="i-love-you">
+                I LOVE YOU ❤️
+            </div>
+
+            <div class="tulisan-cinta">
+                Satu kalimat sederhana,
+                <br>
+                tapi khusus buat kamu. 💗
+            </div>
+
+            <button
+                class="btn btn-cinta"
+                onclick="loveToo()"
+            >
+                I LOVE YOU TOO 💗
+            </button>
+
+        </div>
+
+
+        <!-- BALASAN -->
+
+        <div
+            class="balasan"
+            id="balasan"
+        >
+
+            <div class="hati-besar">
+                ❤️
+            </div>
+
+            <h1>
+                YEEEAYYY! 🥹💗
+            </h1>
+
+            <p>
+                Aku seneng banget! 🎉
+                <br><br>
+                Love you too, Cippaa. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- EFEK PERAYAAN -->
+
+<div id="perayaan"></div>
+
+
+<script>
+
+/* ==================================================
+   AUDIO
+================================================== */
+
+let audioContext=null;
+
+
+function mulaiAudio(){
+
+    if(!audioContext){
+
+        const AC=
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        if(AC){
+            audioContext=new AC();
+        }
+    }
+
+    if(
+        audioContext &&
+        audioContext.state==="suspended"
+    ){
+        audioContext.resume();
+    }
+}
+
+
+function nada(
+    frequency,
+    waktu,
+    durasi,
+    volume=.16,
+    type="triangle"
+){
+
+    if(!audioContext) return;
+
+    const osc=
+        audioContext.createOscillator();
+
+    const gain=
+        audioContext.createGain();
+
+    osc.type=type;
+
+    osc.frequency.setValueAtTime(
+        frequency,
+        waktu
+    );
+
+    gain.gain.setValueAtTime(
+        .0001,
+        waktu
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        volume,
+        waktu+.025
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        .0001,
+        waktu+durasi
+    );
+
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+
+    osc.start(waktu);
+    osc.stop(waktu+durasi);
+}
+
+
+function suaraKlik(){
+
+    mulaiAudio();
+
+    if(!audioContext) return;
+
+    const t=
+        audioContext.currentTime;
+
+    nada(
+        520,
+        t,
+        .10,
+        .12,
+        "sine"
+    );
+}
+
+
+/* ==================================================
+   SOUND YEEEAY / HORE
+================================================== */
+
+function suaraHore(){
+
+    mulaiAudio();
+
+    if(!audioContext) return;
+
+    const t=
+        audioContext.currentTime;
+
+    nada(392,t,.16,.16,"triangle");
+
+    nada(
+        523,
+        t+.12,
+        .16,
+        .17,
+        "triangle"
+    );
+
+    nada(
+        659,
+        t+.24,
+        .18,
+        .18,
+        "triangle"
+    );
+
+    nada(
+        784,
+        t+.38,
+        .22,
+        .20,
+        "triangle"
+    );
+
+    nada(
+        1046,
+        t+.55,
+        .35,
+        .22,
+        "triangle"
+    );
+
+    nada(
+        1318,
+        t+.68,
+        .18,
+        .12,
+        "sine"
+    );
+
+    nada(
+        1568,
+        t+.80,
+        .35,
+        .13,
+        "sine"
+    );
+
+    nada(
+        523,
+        t+.98,
+        .65,
+        .10,
+        "sine"
+    );
+
+    nada(
+        659,
+        t+.98,
+        .65,
+        .10,
+        "sine"
+    );
+
+    nada(
+        784,
+        t+.98,
+        .65,
+        .10,
+        "sine"
+    );
+
+    nada(
+        1046,
+        t+.98,
+        .65,
+        .08,
+        "sine"
+    );
+}
+
+
+/* ==================================================
+   SOUND AMPLOP
+================================================== */
+
+function suaraAmplop(){
+
+    mulaiAudio();
+
+    if(!audioContext) return;
+
+    const t=
+        audioContext.currentTime;
+
+    nada(
+        440,
+        t,
+        .15,
+        .10,
+        "sine"
+    );
+
+    nada(
+        554,
+        t+.12,
+        .15,
+        .12,
+        "sine"
+    );
+
+    nada(
+        659,
+        t+.24,
+        .25,
+        .14,
+        "sine"
+    );
+}
+
+
+/* ==================================================
+   SOUND LOVE TOO
+================================================== */
+
+function suaraLove(){
+
+    mulaiAudio();
+
+    if(!audioContext) return;
+
+    const t=
+        audioContext.currentTime;
+
+    nada(
+        523,
+        t,
+        .25,
+        .13,
+        "sine"
+    );
+
+    nada(
+        659,
+        t+.18,
+        .25,
+        .15,
+        "sine"
+    );
+
+    nada(
+        784,
+        t+.36,
+        .35,
+        .17,
+        "sine"
+    );
+
+    nada(
+        1046,
+        t+.55,
+        .55,
+        .18,
+        "sine"
+    );
+
+    nada(
+        1318,
+        t+.75,
+        .7,
+        .10,
+        "sine"
+    );
+}
+
+
+/* ==================================================
+   HALAMAN
+================================================== */
+
+function bukaPesan(){
+
+    mulaiAudio();
+    suaraKlik();
+
+    document
+        .getElementById("halaman1")
+        .style.display="none";
+
+    document
+        .getElementById("halaman2")
+        .style.display="flex";
+}
+
+
+function lanjut(){
+
+    mulaiAudio();
+    suaraKlik();
+
+    document
+        .getElementById("halaman2")
+        .style.display="none";
+
+    document
+        .getElementById("halaman3")
+        .style.display="flex";
+}
+
+
+/* ==================================================
+   ENGGAK
+================================================== */
+
+const pesan=[
+
+    "Nggak boleh enggak 😭❤️",
+    "Harus mau dong 🥺",
+    "Jangan pilih enggak yaa 😭",
+    "Ayolah Cippaa 🥹💗",
+    "Masa enggak sih? 😭",
+    "Coba klik Iya ❤️",
+    "Aku tunggu jawaban Iya-nya 🥺",
+    "Jangan bikin aku sedih 😭",
+    "Nailong juga pengen kamu bilang Iya 🐉❤️",
+    "Sekali lagi... pilih Iya? ❤️",
+    "Nggak boleh kabur 😭💗",
+    "Pilih yang Iya dong 🥹",
+    "Pleaseee... Iya ya? 🥺❤️",
+    "Masih ada kesempatan buat pilih Iya 😭",
+    "Hehe, jangan Enggak terus dong 🤭",
+    "Aku yakin kamu sebenarnya mau 😭❤️"
+
+];
+
+let indexPesan=0;
+
+const tombolTidak=
+    document.getElementById("tombolTidak");
+
+const gifKedua=
+    "https://media1.tenor.com/m/JHG8_5ZObrAAAAAd/nailong-yellow-dragon.gif";
+
+let sudahGantiGif=false;
+
+
+function kabur(){
+
+    suaraKlik();
+
+    const area=
+        document.querySelector(".buttons");
+
+    const maxX=
+        area.clientWidth-
+        tombolTidak.offsetWidth;
+
+    const maxY=
+        area.clientHeight-
+        tombolTidak.offsetHeight;
+
+    const x=
+        Math.random()*
+        Math.max(0,maxX);
+
+    const y=
+        Math.random()*
+        Math.max(0,maxY);
+
+    tombolTidak.style.left=
+        x+"px";
+
+    tombolTidak.style.top=
+        y+"px";
+
+
+    const pesanBox=
+        document.getElementById("pesanNggak");
+
+    pesanBox.style.opacity="0";
+
+    setTimeout(()=>{
+
+        pesanBox.innerText=
+            pesan[indexPesan];
+
+        pesanBox.style.opacity="1";
+
+        indexPesan++;
+
+        if(
+            indexPesan>=pesan.length
+        ){
+            indexPesan=0;
+        }
+
+    },100);
+
+
+    const gif=
+        document.getElementById("gifNailong");
+
+    if(!sudahGantiGif){
+
+        gif.classList.remove(
+            "ganti-gif"
+        );
+
+        void gif.offsetWidth;
+
+        gif.src=gifKedua;
+
+        gif.classList.add(
+            "ganti-gif"
+        );
+
+        sudahGantiGif=true;
+    }
+}
+
+
+tombolTidak.addEventListener(
+    "touchstart",
+    function(e){
+
+        e.preventDefault();
+
+        kabur();
+    }
+);
+
+
+tombolTidak.addEventListener(
+    "mouseenter",
+    function(){
+
+        kabur();
+    }
+);
+
+
+/* ==================================================
+   JAWAB IYA
+================================================== */
+
+function jawabIya(){
+
+    mulaiAudio();
+
+    suaraHore();
+
+    document
+        .getElementById("halaman3")
+        .style.display="none";
+
+    document
+        .getElementById("halaman4")
+        .style.display="flex";
+
+    document
+        .querySelector(".hasil")
+        .style.display="block";
+
+    ledakanPerayaan();
+
+    confettiBanyak();
+
+    flashScreen();
+}
+
+
+/* ==================================================
+   PINDAH KE AMPLOP
+================================================== */
+
+function keAmplop(){
+
+    suaraKlik();
+
+    document
+        .getElementById("halaman4")
+        .style.display="none";
+
+    document
+        .getElementById("halaman5")
+        .style.display="flex";
+}
+
+
+/* ==================================================
+   BUKA AMPLOP
+================================================== */
+
+let amplopSudahDibuka=false;
+
+
+function bukaAmplop(){
+
+    if(amplopSudahDibuka) return;
+
+    amplopSudahDibuka=true;
+
+    mulaiAudio();
+
+    suaraAmplop();
+
+    const amplop=
+        document.getElementById(
+            "amplopArea"
+        );
+
+    amplop.classList.add("dibuka");
+
+
+    setTimeout(
+        function(){
+
+            document
+                .querySelector(
+                    ".tap-amplop"
+                )
+                .style.display="none";
+
+            document
+                .getElementById(
+                    "isiCinta"
+                )
+                .style.display="block";
+
+        },
+        850
+    );
+}
+
+
+/* ==================================================
+   I LOVE YOU TOO
+================================================== */
+
+function loveToo(){
+
+    mulaiAudio();
+
+    suaraLove();
+
+    document
+        .getElementById("isiCinta")
+        .style.display="none";
+
+    document
+        .getElementById("bagianAmplop")
+        .style.display="none";
+
+    document
+        .getElementById("balasan")
+        .style.display="block";
+
+    ledakanPerayaan();
+
+    confettiBanyak();
+
+    flashScreen();
+}
+
+
+/* ==================================================
+   LEDAKAN
+================================================== */
+
+function ledakanPerayaan(){
+
+    const area=
+        document.getElementById(
+            "perayaan"
+        );
+
+    const emoji=[
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💝",
+        "✨",
+        "⭐",
+        "🌟",
+        "🎉",
+        "🥳",
+        "💫"
+    ];
+
+    for(
+        let i=0;
+        i<70;
+        i++
+    ){
+
+        const item=
+            document.createElement("div");
+
+        item.className="burst";
+
+        item.innerText=
+            emoji[
+                Math.floor(
+                    Math.random()*
+                    emoji.length
+                )
+            ];
+
+
+        const angle=
+            Math.random()*
+            Math.PI*2;
+
+        const distance=
+            130+
+            Math.random()*350;
+
+
+        item.style.setProperty(
+            "--x",
+            Math.cos(angle)*
+            distance+
+            "px"
+        );
+
+        item.style.setProperty(
+            "--y",
+            Math.sin(angle)*
+            distance+
+            "px"
+        );
+
+        item.style.setProperty(
+            "--r",
+            (Math.random()*900-450)+
+            "deg"
+        );
+
+        item.style.animationDelay=
+            Math.random()*.35+
+            "s";
+
+        area.appendChild(item);
+
+        setTimeout(
+            ()=>{
+                item.remove();
+            },
+            1900
+        );
+    }
+}
+
+
+/* ==================================================
+   CONFETTI
+================================================== */
+
+function confettiBanyak(){
+
+    const emoji=[
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "✨",
+        "⭐",
+        "🌟",
+        "🎉",
+        "🥳",
+        "💫"
+    ];
+
+    for(
+        let i=0;
+        i<100;
+        i++
+    ){
+
+        setTimeout(
+            function(){
+
+                const c=
+                    document.createElement(
+                        "div"
+                    );
+
+                c.className=
+                    "confetti";
+
+                c.innerText=
+                    emoji[
+                        Math.floor(
+                            Math.random()*
+                            emoji.length
+                        )
+                    ];
+
+                c.style.left=
+                    Math.random()*
+                    100+
+                    "vw";
+
+                c.style.fontSize=
+                    18+
+                    Math.random()*25+
+                    "px";
+
+                c.style.animationDuration=
+                    2+
+                    Math.random()*3+
+                    "s";
+
+                document.body.appendChild(c);
+
+                setTimeout(
+                    function(){
+                        c.remove();
+                    },
+                    5500
+                );
+
+            },
+            i*35
+        );
+    }
+}
+
+
+/* ==================================================
+   FLASH
+================================================== */
+
+function flashScreen(){
+
+    const flash=
+        document.createElement("div");
+
+    flash.className="flash";
+
+    document.body.appendChild(flash);
+
+    setTimeout(
+        ()=>{
+            flash.remove();
+        },
+        500
+    );
+}
+
+
+/* ==================================================
+   AUDIO TOUCH
+================================================== */
+
+document.addEventListener(
+    "touchstart",
+    function(){
+        mulaiAudio();
+    },
+    {once:true}
+);
+
+</script>
+
+</body>
+</html>
